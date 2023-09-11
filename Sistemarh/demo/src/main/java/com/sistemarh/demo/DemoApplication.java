@@ -38,87 +38,92 @@ public class DemoApplication {
 		estado_digitado = sc.nextLine();
 		estado = estado_digitado;
 		System.out.println("\ncliente cadastrado\n");
-
+		boolean indo = true;
 		
 		// Atendente atendente = new Atendente(nome, data_nascimento, idade, cargo, ctps, salario);
 		// Atendente.getLista_Atendente().add(atendente);
-		if (cargo.equalsIgnoreCase("atendente")) {
-			Atendente atendente = new Atendente(nome, data_nascimento, idade, cargo, ctps, salario,estado);
-			Atendente.getLista_Atendente().add(atendente);
-			System.out.println("Escolha uma opção:\n1. para calcular o FGTS\n2. para calcular o INSS\n3. para Calcular o decimo terceiro\n4. para calcular as férias.\n5. para calcular o imposto de renda.");
-			opcao = sc.nextInt();
-			switch (opcao) {
-			case 1:
-				atendente.fgts(salario);
+		while(indo){
+			if (cargo.equalsIgnoreCase("atendente")) {
+				Atendente atendente = new Atendente(nome, data_nascimento, idade, cargo, ctps, salario,estado);
+				Atendente.getLista_Atendente().add(atendente);
+				System.out.println("Escolha uma opção:\n1. para calcular o FGTS\n2. para calcular o INSS\n3. para Calcular o decimo terceiro\n"+
+				"4. para calcular as férias.\n5. para calcular o imposto de renda.\n6. Sair");
+				opcao = sc.nextInt();
+				switch (opcao) {
+				case 1:
+					atendente.fgts(salario);
+					break;
+				case 2:
+					atendente.inss(salario);
 				break;
-			case 2:
-				atendente.inss(salario);
-			break;
-			case 3:
-				atendente.decimo_terceiro(salario);
-			break;
-			case 4:
-				atendente.ferias(salario);
-			break;
-			case 5:
-				atendente.imposto_renda(salario);
-			break;
-			default:
+				case 3:
+					atendente.decimo_terceiro(salario);
 				break;
-				
-		}
-		}else if (cargo.equalsIgnoreCase("supervisor")) {
-			Supervisor Supervisor = new Supervisor(nome, data_nascimento, idade, cargo, ctps, salario,estado);
-			Supervisor.getLista_Supervisor().add(Supervisor);
-			System.out.println("Escolha uma opção:\n1. para calcular o FGTS\n2. para calcular o INSS\n3. para Calcular o decimo terceiro\n4. para calcular as férias.\n5. para calcular o imposto de renda.");
-			opcao = sc.nextInt();
-			switch (opcao) {
-			case 1:
-				Supervisor.fgts(salario);
+				case 4:
+					atendente.ferias(salario);
 				break;
-			case 2:
-				Supervisor.inss(salario);
-			break;
-			case 3:
-				Supervisor.decimo_terceiro(salario);
-			break;
-			case 4:
-				Supervisor.ferias(salario);
-			break;
-			case 5:
-				Supervisor.imposto_renda(salario);
-			break;
-			default:
+				case 5:
+					atendente.imposto_renda(salario);
 				break;
-		}
+				case 6: 
+					indo = false;
+				default:
+					break;
+					
+			}
+			}else if (cargo.equalsIgnoreCase("supervisor")) {
+				Supervisor Supervisor = new Supervisor(nome, data_nascimento, idade, cargo, ctps, salario,estado);
+				Supervisor.getLista_Supervisor().add(Supervisor);
+				System.out.println("Escolha uma opção:\n1. para calcular o FGTS\n2. para calcular o INSS\n3. para Calcular o decimo terceiro\n4. para calcular as férias.\n5. para calcular o imposto de renda.\n6. Sair");
+				opcao = sc.nextInt();
+				switch (opcao) {
+				case 1:
+					Supervisor.fgts(salario);
+					break;
+				case 2:
+					Supervisor.inss(salario);
+				break;
+				case 3:
+					Supervisor.decimo_terceiro(salario);
+				break;
+				case 4:
+					Supervisor.ferias(salario);
+				break;
+				case 5:
+					Supervisor.imposto_renda(salario);
+				break;
+				default:
+					break;
+			}
 
-		
-	}else if (cargo.equalsIgnoreCase("Gerente")) {
-		
-		Gerente Gerente = new Gerente(nome, data_nascimento, idade, cargo, ctps, salario,estado );
-			Pessoa.Gerente.getLista_Gerente().add(Gerente);
-			System.out.println("Escolha uma opção:\n1. para calcular o FGTS\n2. para calcular o INSS\n3. para Calcular o decimo terceiro\n4. para calcular as férias.\n5. para calcular o imposto de renda.");
-			opcao = sc.nextInt();
-			switch (opcao) {
-			case 1:
-				Gerente.fgts(salario);
+			
+		}else if (cargo.equalsIgnoreCase("Gerente")) {
+			
+			Gerente Gerente = new Gerente(nome, data_nascimento, idade, cargo, ctps, salario,estado );
+				Pessoa.Gerente.getLista_Gerente().add(Gerente);
+				System.out.println("Escolha uma opção:\n1. para calcular o FGTS\n2. para calcular o INSS\n3. para Calcular o decimo terceiro\n4. para calcular as férias.\n5. para calcular o imposto de renda.\n6. Sair");
+				opcao = sc.nextInt();
+				switch (opcao) {
+				case 1:
+					Gerente.fgts(salario);
+					break;
+				case 2:
+					Gerente.inss(salario);
 				break;
-			case 2:
-				Gerente.inss(salario);
-			break;
-			case 3:
-				Gerente.decimo_terceiro(salario);
-			break;
-			case 4:
-				Gerente.ferias(salario);
-			break;
-			case 5:
-				Gerente.imposto_renda(salario);
-			break;
-			default:
+				case 3:
+					Gerente.decimo_terceiro(salario);
 				break;
-		
-	}
+				case 4:
+					Gerente.ferias(salario);
+				break;
+				case 5:
+					Gerente.imposto_renda(salario);
+				break;
+				default:
+					break;
+			
+		}
+}
 }
 }
 }

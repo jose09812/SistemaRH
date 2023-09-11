@@ -56,12 +56,12 @@ public class Supervisor extends Funcionario implements Calculos {
      @Override
      public void decimo_terceiro(double salario) {
      decimo_terceiro = salario*2;
-     System.out.println("O valor a ser recebido é "+ decimo_terceiro+ ". Lembrando que esse valor representa o seu salario mais o decimo, e pode ser parcelado o pagamento em duas vezes.");
-     }
+     System.out.println("O valor a ser recebido é "+ decimo_terceiro+ ". Lembrando que esse valor representa o seu salario mais o decimo, e pode ser parcelado o pagamento em duas vezes.+\n");
+     };
      @Override
      public void ferias(double salario) {
      ferias = salario*1.33;
-         System.out.println("O valor que voce irá receber é R$"+ ferias+ ", esse valor representa o seu salario mais as férias");
+         System.out.println("O valor que voce irá receber é R$"+ ferias+ ", esse valor representa o seu salario mais as férias+\n");
      }
      @Override
      public void imposto_renda(double salario) {
@@ -85,7 +85,7 @@ public class Supervisor extends Funcionario implements Calculos {
           }else if (salario > 4664.68){
                deducao_inss = salario - inss;
                imposto_renda= deducao_inss*0.275-869.36-deducao;
-               System.out.println(imposto_renda);
+               System.out.println(imposto_renda+"\n");
           }
     
      }

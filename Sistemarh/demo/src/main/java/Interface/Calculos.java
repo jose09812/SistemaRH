@@ -1,10 +1,10 @@
 package Interface;
 
 public interface Calculos {
-    abstract void fgts(double salario);
-    abstract void inss(double salario);
-    abstract void decimo_terceiro(double salario);
-    abstract void ferias(double salario);
-    abstract void imposto_renda(double salario);
+     void fgts(double salario);
+     void inss(double salario);
+     void decimo_terceiro(double salario);
+     void ferias(double salario);
+     void imposto_renda(double salario);
     
 }
